@@ -1,0 +1,76 @@
+<div class="content">
+
+
+    <div class="mainbar">
+        <div class="page-head">
+
+
+            <h2 id="editNameDiv" class="underline-me pull-left">{{vm.skill.description}}</h2>
+            <div class="bread-crumb pull-right">
+                <a ng-click="vm.deleteSkill(vm.skill.id);"
+                   tooltip="Click to remove the Current Skill"
+                   tooltip-placement="left"
+                   tooltip-trigger="mouseenter"><h1 class="fa fa-remove delete"></h1></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <strong ng-show="!vm.skill">Loading...</strong>
+        </div>
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="widget wlightblue">
+                            <!-- Widget title -->
+
+                            <div class="widget-content">
+                                <!-- Widget content -->
+
+                                <table class="table  table-bordered ">
+                                    <tbody>
+
+                                    <tr>
+                                        <td>Description</td>
+                                        <td>
+                                            <span ng-show="!vm.editDescription" ng-click="vm.editDescriptionFunc();" class="underline-me">{{vm.skill.description}}</span>
+                                            <input ng-model="vm.skill.description" type="text"  ng-show="vm.editDescription" id="editDescriptionInput"
+                                                   ng-keydown="vm.checkKey($event, 'description');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editDescriptionButtonDiv" class="pull-left">
+                                                <a class="fa fa-edit" ng-show="!vm.editDescription" ng-click="vm.editDescriptionFunc();"
+                                                   tooltip="Edit the description of the Skill"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                            <div ng-show="vm.editDescription">
+                                                <a class="fa fa-save" ng-click="vm.editDescriptionSave();"
+                                                   tooltip="Save the description of the Skill"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editDescription=false;"
+                                                   tooltip="Cancel the description of the Skill"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

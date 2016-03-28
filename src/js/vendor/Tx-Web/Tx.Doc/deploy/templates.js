@@ -1,0 +1,1 @@
+angular.module('baseApp.templates',['baseApp.shared.blades','baseApp.shared.breadcrumbs','baseApp.shared.fileUploader','baseApp.shared.imagepreview','baseApp.shared.sideMenu','baseApp.shared.tabs','baseApp.shared.txAccordion','baseApp.shared.txColorPicker','baseApp.shared.txDropDown','baseApp.shared.usercomment']);

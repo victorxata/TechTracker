@@ -1,0 +1,105 @@
+<div class="content">
+
+
+    <div class="mainbar">
+        <div class="page-head">
+
+
+            <h2 id="editNameDiv" class="underline-me pull-left">{{vm.securableProperty.typeName}}</h2>
+            <div class="bread-crumb pull-right">
+                <a ng-click="vm.deleteSecurableProperty(vm.securableProperty.id);"
+                   tooltip="Click to remove the Current Securable Type"
+                   tooltip-placement="left"
+                   tooltip-trigger="mouseenter"><h1 class="fa fa-remove delete"></h1></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <strong ng-show="!vm.securableProperty">Loading...</strong>
+        </div>
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-push-2 col-md-7">
+
+                        <div class="widget wlightblue">
+                            <!-- Widget title -->
+
+                            <div class="widget-content">
+                                <!-- Widget content -->
+
+                                <table class="table  table-bordered ">
+                                    <tbody>
+
+                                    <tr>
+                                        <td>Type Name</td>
+                                        <td>
+                                            <span ng-show="!vm.editTypeName" ng-click="vm.editTypeNameFunc();" class="underline-me">{{vm.securableProperty.typeName}}</span>
+                                            <input ng-model="vm.securableProperty.typeName" type="text"  ng-show="vm.editTypeName" id="editTypeNameInput"
+                                                   ng-keydown="vm.checkKey($event, 'typeName');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editTypeNameButtonDiv" class="pull-right">
+                                                <a class="fa fa-edit" ng-show="!vm.editTypeName" ng-click="vm.editTypeNameFunc();"
+                                                   tooltip="Click to edit the Type name"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                            <div ng-show="vm.editTypeName">
+                                                <a class="fa fa-save" ng-click="vm.editTypeNameSave();"
+                                                   tooltip="Click to save the Type name"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editTypeName=false;"
+                                                   tooltip="Click to cancel the edition of the Type name"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Properties</td>
+                                        <td>
+                                            <table class="table">
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <input type="text" ng-model="vm.newProperty"/>
+                                                    </td>
+                                                    <td>
+                                                        <a class="fa fa-save" ng-click="vm.saveProperty();"
+                                                           ng-show="vm.newProperty"
+                                                           tooltip="Click to save this property"
+                                                           tooltip-placement="bottom"
+                                                           tooltip-trigger="mouseenter"></a>
+                                                    </td>
+                                                </tr>
+                                                <tr ng-repeat="property in vm.securableProperty.properties | filter:vm.searchProperty">
+                                                    <td class="roleNameColumn">
+                                                        <span ng-bind="property"></span>
+                                                    </td>
+                                                    <td><a class="fa fa-remove" ng-click="vm.removeProperty(property);"
+                                                           tooltip="Click to remove this property"
+                                                           tooltip-placement="bottom"
+                                                           tooltip-trigger="mouseenter"></a></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

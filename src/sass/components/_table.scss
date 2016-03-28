@@ -1,0 +1,59 @@
+table {
+  color: #333;
+  font-size: .9em;
+  font-weight: 300;
+  text-align: left;
+  line-height: 40px;
+  border-spacing: 0;
+  border: none;
+  width: 80%;
+}
+
+thead tr:first-child {
+  background: #428bca;
+  color: #fff;
+  border: none;
+}
+
+
+tbody tr:hover {background-color: #f0fbff;}
+tbody td {border-bottom: 1px solid #ddd;}
+
+td:first-child {
+  text-align: center;
+  width: 30px;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top:2px;
+}
+
+td {
+  cursor: pointer;
+}
+
+.button {
+  color: #696969;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.alter:hover {
+  color: #428bca;
+}
+
+.exclude:hover {
+  color: #dc2a2a;
+}
+
+.roleNameColumn{
+  width: 80%;
+}
+
+span.small{
+  font-size: .7rem;
+}
+
+span.strong{
+  font-size: .9rem;
+  color: red;
+}

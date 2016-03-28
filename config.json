@@ -1,0 +1,69 @@
+{
+  "build_dir": "build",
+  "dist_dir": "dist",
+  "dependencies": {
+    "tx": [
+      "txservices",
+      "txButton",
+      "txInput",
+      "txTable"
+    ],
+    "vendor": [
+      "src/js/vendor/moment/min/moment.min.js",
+      "src/js/vendor/jquery/dist/jquery.js",
+      "src/js/vendor/angular/angular.min.js",
+
+      "src/js/vendor/angular-bootstrap/ui-bootstrap.min.js",
+      "src/js/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js",
+      "src/js/vendor/bootstrap/js/dropdown.js",
+
+      "src/js/vendor/angular-gettext/dist/angular-gettext.min.js",
+      "src/js/vendor/angular-ui-router/release/angular-ui-router.min.js",
+      "src/js/vendor/underscore/underscore-min.js",
+      "src/js/vendor/js-data/dist/js-data.min.js",
+      "src/js/vendor/js-data-angular/dist/js-data-angular.min.js",
+      "src/js/vendor/angular-mocks/angular-mocks.js",
+
+      "src/js/vendor/Tx-Web/Tx.Doc/deploy/_shared.module.js",
+      "src/js/vendor/Tx-Web/Tx.Doc/deploy/blades/blade.service.js",
+      "src/js/vendor/Tx-Web/Tx.Doc/deploy/blades/blades.js",
+      "src/js/vendor/ngDialog/js/ngDialog.min.js",
+      "src/js/vendor/angular-animate/angular-animate.min.js",
+      "src/js/vendor/angular-toastr/dist/angular-toastr.tpls.min.js",
+
+      "src/js/theme/custom.js",
+      "src/js/theme/html5shiv.js",
+      "src/js/theme/respond.min.js",
+      "src/js/theme/bootstrap-switch.min.js",
+
+      "src/js/vendor/signalR/jquery.signalR.js",
+      "src/js/vendor/angular-signalr-hub/signalr-hub.js",
+
+      "src/js/vendor/ng-file-upload/ng-file-upload-shim.min.js",
+      "src/js/vendor/ng-file-upload/ng-file-upload.min.js",
+
+      "src/js/vendor/angularjs-dropdown-multiselect/dist/angularjs-dropdown-multiselect.min.js",
+
+      "src/js/vendor/jquery-flot/jquery.flot.js",
+      "src/js/vendor/jquery-flot/jquery.flot.pie.js",
+      "src/js/vendor/jquery-flot/jquery.flot.resize.js",
+      "src/js/vendor/jquery-flot/jquery.flot.stack.js"
+    ],
+    "css":[
+      "src/js/vendor/ngDialog/css/ngDialog.min.css",
+      "src/js/vendor/ngDialog/css/ngDialog-theme-default.css",
+      "src/js/vendor/ngDialog/css/ngDialog-theme-default-wide.css",
+      "src/js/vendor/angular-toastr/dist/angular-toastr.min.css",
+      "src/js/vendor/bootstrap/dist/css/bootstrap.min.css",
+      "src/css/bootstrap-switch.css",
+      "src/css/font-awesome.min.css",
+      "src/css/fullcalendar.css",
+      "src/css/jquery.gritter.css",
+      "src/css/jquery-ui.css",
+      "src/css/prettyPhoto.css",
+      "src/css/rateit.css",
+      "src/css/style.css",
+      "src/css/widgets.css"
+    ]
+  }
+}

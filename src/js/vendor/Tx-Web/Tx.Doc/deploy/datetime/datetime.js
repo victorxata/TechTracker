@@ -1,0 +1,1 @@
+angular.module("baseApp.shared").directive("formatDateTime",["moment",function(a){"use strict";return{restrict:"EA",scope:!0,replace:!0,template:"<span>{{displayDate()}}</span>",link:function(b,c,d){b.displayDate=function(){return a(b.$eval(d.value)).format("L")}}}}]).factory("moment",function(){"use strict";return moment});

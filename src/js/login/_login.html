@@ -1,0 +1,48 @@
+<div class="admin-form">
+    <!-- Widget starts -->
+    <div class="widget wlightblue">
+        <!-- Widget head -->
+        <div class="widget-head">
+            <i class="fa fa-lock"></i>&nbsp&nbspAccenture<strong>TechTracker</strong><span class="small pull-right">v0.1.0</span>
+        </div>
+
+        <div class="widget-content">
+            <div class="padd">
+                <!-- Login form -->
+                <form class="form-horizontal" ng-submit="login()">
+                    <!-- Username -->
+                    <div class="form-group">
+                        <label class="control-label col-lg-3" for="inputUsername">Username</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputUsername" placeholder="Username" ng-model="username">
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label class="control-label col-lg-3" for="inputPassword">Password</label>
+                        <div class="col-lg-9">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="password">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                        <!--<label class="control-label col-lg-3" for="inputApis">Select API</label>-->
+                        <!--<div class="col-lg-9">-->
+                            <!--<select id="inputApis" class="form-control"-->
+                                    <!--ng-model="selectedApi"-->
+                                    <!--ng-options="api.name for api in apis track by api.name" ng-change="changeApi();">-->
+                            <!--</select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!-- Remember me checkbox and sign in button -->
+                    <div class="form-group pull-right">
+
+                        <div class="col-lg-9">
+                            <button type="submit" class="btn btn-info"><strong>Login</strong></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="main">
+    <div class="sidebar">
+        <div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+        <div class="sidebar-inner" style="">
+            <!-- Search form -->
+            <div class="sidebar-widget">
+                <form>
+
+                </form>
+            </div>
+
+            <ul class="navi">
+                <li class="red"><a ui-sref="home"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li class="green"><a ui-sref="opportunities"><i class="fa fa-book"></i> Opportunities</a></li>
+                <li class="yellow"><a ui-sref="candidates"><i class="fa fa-users"></i> Candidates</a></li>
+
+                <li class="has_submenu nlightblue">
+                    <a href="#">
+                        <!-- Menu name with icon -->
+                        <i class="fa fa-th"></i> Auxiliar
+                        <!-- Icon for dropdown -->
+                        <span class="pull-right"><i class="fa fa-angle-right"></i></span>
+                    </a>
+                    <ul style="display: block;">
+
+                        <li><a ui-sref="accounts"><i class="fa fa-briefcase"></i> Accounts</a></li>
+
+                        <li><a ui-sref="skills"><i class="fa fa-gears"></i> Skills</a></li>
+                    </ul>
+                </li>
+                <li class="has_submenu nlightblue">
+                    <a href="#">
+                        <!-- Menu name with icon -->
+                        <i class="fa fa-th"></i> Administration
+                        <!-- Icon for dropdown -->
+                        <span class="pull-right"><i class="fa fa-angle-right"></i></span>
+                    </a>
+                    <ul style="display: block;">
+
+                        <li><a ui-sref="users"><i class="fa fa-user"></i> Users</a></li>
+
+                        <li><a ui-sref="roles"><i class="fa fa-gears"></i> Roles</a></li>
+
+                        <li><a ui-sref="endpoints"><i class="fa fa-code-fork"></i> Endpoints</a></li>
+
+                        <li><a ui-sref="securableProperties"><i class="fa fa-shield"></i> Securable Types</a></li>
+
+                        <li><a ui-sref="fieldsFilter"><i class="fa fa-list"></i> Fields Filters</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+            <!--/ Sidebar navigation -->
+
+        </div>
+    </div>
+    <div id="notificationCenter"></div>
+    <div class="push20pxdown"><ui-view></ui-view></div>
+</div>

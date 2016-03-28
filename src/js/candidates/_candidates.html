@@ -1,0 +1,62 @@
+<div class="content">
+
+
+    <div class="mainbar">
+        <div class="page-head">
+
+            <!-- Page heading -->
+            <h2 class="pull-left">Candidates</h2>
+
+            <div class="bread-crumb pull-right">
+                <div class="addButton">
+                    <a class="fa fa-plus" ng-click="vm.addCandidate();"
+                       tooltip="Add a new Candidate"
+                       tooltip-placement="left"
+                       tooltip-trigger="mouseenter"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong ng-show="!vm.candidates">Loading...</strong>
+                        <div class="widget widget wlightblue">
+
+                            <div class="widget-content">
+                                <!-- Search form -->
+                                <div class="sidebar-widget">
+                                    <form>
+                                        <input type="text" class="form-control" placeholder="Search" ng-model="vm.search">
+                                    </form>
+                                </div>
+                                <div class="table-responsive">
+
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="candidate in vm.candidates | filter:vm.search">
+
+                                            <td>
+                                                <a ui-sref="candidateDetails( {id: candidate.id} )"> <span ng-bind="candidate.description"></span></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

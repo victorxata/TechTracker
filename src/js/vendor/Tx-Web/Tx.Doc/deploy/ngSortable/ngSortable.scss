@@ -1,0 +1,68 @@
+.draggableList {
+  position: relative;
+}
+
+.as-sortable-item, .as-sortable-placeholder {
+  display: block;
+  height: 30px;
+  vertical-align: middle;
+  line-height: 30px;
+}
+
+.as-sortable-item {
+  position: relative;
+  -ms-touch-action: none;
+  touch-action: none;
+  border: solid 1px darkgrey;
+  background-color: #ffffff;
+  padding: 0 30px 0 10px;
+}
+.as-sortable-item + .as-sortable-item {
+  border-top: none;
+}
+
+.as-sortable-item-handle {
+  cursor: move;
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  height: 15px;
+  width: 30px;
+  border-top: 3px solid #BBB;
+  border-bottom: 3px solid #BBB;
+}
+.as-sortable-item-handle:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  width: 100%;
+  height: 3px;
+  background-color: #BBB;
+}
+
+.as-sortable-placeholder {
+  border: 1px dashed darkgrey;
+  box-sizing: border-box;
+  background-color: #dbdbdb;
+}
+
+.as-sortable-drag {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: .8;
+}
+
+.as-sortable-hidden {
+  display: none !important;
+}
+
+.as-sortable-un-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

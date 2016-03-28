@@ -1,0 +1,121 @@
+<div class="content">
+
+    <div class="mainbar">
+        <div class="page-head">
+            <!-- Page heading -->
+
+
+            <h2 id="editNameDiv" class="underline-me pull-left">Field Filter</h2>
+            <div class="bread-crumb pull-right">
+                <a ng-click="vm.deleteFieldFilter();"
+                   tooltip="Remove this Field Filter"
+                   tooltip-placement="left"
+                   tooltip-trigger="mouseenter"><h1 class="fa fa-remove delete"></h1></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <strong ng-show="!vm.fieldFilter">Loading...</strong>
+        </div>
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="widget wlightblue">
+                            <!-- Widget title -->
+
+                            <div class="widget-content">
+                                <!-- Widget content -->
+
+                                <table class="table  table-bordered ">
+                                    <tbody><tr>
+
+                                    <tr>
+                                        <td>Role Name</td>
+                                        <td>
+                                            <select id="inputRoles" class="form-control"
+                                                    ng-model="vm.selectedRole"
+                                                    ng-options="role.name for role in vm.roles track by role.id" ng-change="vm.save();">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>User Name</td>
+                                        <td>
+                                            <select id="inputUsers" class="form-control"
+                                                    ng-model="vm.selectedUser"
+                                                    ng-options="user.userName for user in vm.users track by user.id" ng-change="vm.save();">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class Name</td>
+                                        <td>
+                                            <select id="inputClasses" class="form-control"
+                                                    ng-model="vm.selectedClass"
+                                                    ng-options="class.typeName for class in vm.classes track by class.typeName" ng-change="vm.changeClass();">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Property</td>
+                                        <td>
+                                            <select id="inputProperties" class="form-control"
+                                                    ng-model="vm.selectedProperty"
+                                                    ng-options="property as property for property in vm.properties" ng-change="vm.save();">
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Action</td>
+                                        <td>
+                                            <select class="form-control" ng-model="vm.selectedAction" ng-change="vm.save()">
+                                                <option value="setToNull">Set to Null</option>
+                                                <option value="setToString">Set to String</option>
+                                                <option value="remove">Remove</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="itemUser.html">
+    <div class="widget wgreen">
+        <!-- Widget title -->
+        <div class="widget-head">
+            <div class="pull-left">Select Users</div>
+            <div class="widget-icons pull-right">
+                <a class="fa fa-close" ng-click="closeThisDialog()"></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="widget-content">
+            <strong ng-show="!vm.allUsers">Loading...</strong>
+            <!-- Widget content -->
+            <form>
+                <input type="text" class="form-control" placeholder="Search" ng-model="vm.searchUsers">
+            </form>
+            <ul class="activity">
+                <li ng-repeat="user in vm.allUsers | filter:vm.searchUsers track by user.id ">
+                    <input type="checkbox" ng-click="vm.toggleOptionUser(user.id)"/>
+                    <strong ng-bind="user.userName"></strong>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</script>

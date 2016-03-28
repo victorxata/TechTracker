@@ -1,0 +1,1 @@
+angular.module("baseApp.shared").directive("txDisplayBox",function(){"use strict";return{restrict:"E",scope:{title:"@",value:"@"},template:'<div class="col-lg-2 tx-display-box"><div class="display-well">{{::title}} <br><b>{{value}}</b></div></div>'}});

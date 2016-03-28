@@ -1,0 +1,8 @@
+.flyout-bottom {
+  height: 500px;
+  position: absolute;
+  bottom: 45px;
+}
+.flyout-bottom.collapsed {
+  height: 0px;
+}

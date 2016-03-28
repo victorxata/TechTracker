@@ -1,0 +1,145 @@
+.blades-outer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.blades-outer:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: 999;
+  transition: all .3s;
+}
+.blades-outer.left-shadow:before {
+  -webkit-box-shadow: -3px 3px 5px 6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: -3px 3px 5px 6px rgba(0, 0, 0, 0.28);
+  box-shadow: -3px 3px 5px 6px rgba(0, 0, 0, 0.28);
+}
+.blades-outer:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  z-index: 999;
+  transition: all .3s;
+}
+.blades-outer.right-shadow:after {
+  -webkit-box-shadow: 2px 3px 5px 6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 2px 3px 5px 6px rgba(0, 0, 0, 0.28);
+  box-shadow: 2px 3px 5px 6px rgba(0, 0, 0, 0.28);
+}
+
+.blades {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+  position: relative;
+}
+.blades .blade {
+  flex: 0 0 auto;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition: all .3s;
+}
+.blades .blade .content {
+  position: relative;
+  padding: 10px;
+}
+.blades .blade.visible {
+  border-right: 1px solid lightgray;
+  background-color: #EBEBEB;
+}
+.blades .blade.filler {
+  opacity: 1;
+}
+.blades .blade .inner-blade-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #EBEBEB;
+}
+.blades .blade .inner-blade-header h4 {
+  position: relative;
+  line-height: 38px;
+  transform: rotate(90deg);
+  transform-origin: left bottom;
+  white-space: nowrap;
+}
+.blades .blade .controls {
+  background-color: #3555BA;
+}
+.blades .blade .controls .title {
+  color: white;
+  margin-left: 5px;
+  overflow: hidden;
+}
+.blades .blade .controls .ico {
+  float: right;
+  padding: 3px;
+  text-align: center;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+}
+.blades .blade .controls .ico:hover {
+  cursor: pointer;
+}
+.blades .blade .controls .ico.close-ico {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAAOFJREFUKFN1kd0KglAQhL1NQY18mW697G2DQkwMLFOod/EFRE/f2CpIODDuOjPnx9Xr+/40jmPmnIu8DeAlZHKYesMwXBEcLy9KbJkFaHu8Fgpnj0cIn7boQfEtO4c/5uWLRxMjVGbcKRFMOL01TdfZTeEZEmBpgRo2ULjBdXhG13URZq1FgoUDs/+BeYCN5bWg1CZmr4Efc+fpGtQC6lscVSeup2fhtwLkCxjQRmgatbQK/r6DRteYDO28GABJ09Oo5ZX0oX5cRiOswjPI+ujT9agXnZCqgZvTIKvpsfF4/ALRBVIbOHA66gAAAABJRU5ErkJggg==');
+}
+.blades .blade .controls .ico.minimize-ico {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAACNJREFUKFNjGAVDFMjJyemQghl+/vz5hxTM8Pfv34fE478PAeGgYz1QV/fPAAAAAElFTkSuQmCC');
+}
+.blades .blade .controls .ico.maximize-ico {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAAFBJREFUKFNjUFZW1icFM/z69esPKZjhP4mAPA3//v07AcRWBPAlZA07GAiAv3//Hh3MGu7fv/+op6dnKj785MmT52ANQJ3fSMEgG+SIx//lANFncbhe3NETAAAAAElFTkSuQmCC');
+}
+.blades .blade .controls .ico.restore-ico {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAAIpJREFUKFNjQAb//v3z+08AQJVCAEwDkH4NxNfQ8B+cGv7+/dsCFYIDoNw7sAYgIxAJt4EEgfRqJDFhFA0gAh8AKrTG0ADkvAY5AxkDxY5B5bBquAYSRAZAsU6o3HKgAb1A+juIT1ADOiDGhkwgtoZhYjSA/QAHUME/QPwODYPdDKQxNeADqBoYGADEeISIVZWF7QAAAABJRU5ErkJggg==');
+}
+.blades .blade.open {
+  width: 50%;
+}
+.blades .blade.close {
+  display: none;
+}
+.blades .blade.maximized {
+  width: 100% !important;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 2;
+}
+.blades .blade.maximized .content, .blades .blade.maximized .controls {
+  width: 100% !important;
+}
+.blades .blade.minimized {
+  width: 38px !important;
+}
+.blades .blade.minimized .inner-blade-header {
+  width: 38px;
+  transition: width .3s;
+}
+.blades .blade.minimized .inner-blade-header:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+.blades .blade.minimized .content {
+  display: none;
+  margin: 0 !important;
+}
+.blades .blade.minimized .controls {
+  display: none;
+}

@@ -1,0 +1,1 @@
+"use strict";angular.module("baseApp.shared").directive("txBody",["$rootScope",function(a){return{restrict:"A",scope:{},link:function(b,c){a.$on("$stateChangeSuccess",function(a,b,d,e){var f=e.name.split(".").join(" "),g=b.name.split(".").join(" ");c.removeClass(f),c.addClass(g)})}}}]);

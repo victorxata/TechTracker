@@ -1,0 +1,48 @@
+.image-edit {
+  position: relative;
+  display: block;
+  margin: 20px auto 10px;
+  width: 128px;
+}
+.image-edit .image-edit-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 128px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 128px;
+  text-align: center;
+  background: rgba(63, 63, 63, 0.8);
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.image-edit .image-edit-hover .loading {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+.image-edit:hover .image-edit-hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+.image-edit span {
+  margin-right: 8px;
+  font-size: 20px;
+}
+.image-edit input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 128px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+.image-edit img {
+  border: 1px solid #D2D2D2;
+}

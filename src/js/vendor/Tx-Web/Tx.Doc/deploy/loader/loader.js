@@ -1,0 +1,1 @@
+"use strict";angular.module("baseApp.shared").directive("txSpinner",function(){return{restrict:"E",scope:{isLoading:"="},replace:!0,transclude:!0,priority:1,template:'<div class="tx-spinner"><span ng-show="isLoading">Loading...</span> <span ng-hide="isLoading" ng-transclude></span></div>'}});

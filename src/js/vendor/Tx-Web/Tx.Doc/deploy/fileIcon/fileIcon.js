@@ -1,0 +1,1 @@
+angular.module("baseApp.shared").directive("fileIcon",function(){"use strict";return{restrict:"E",template:'<i ng-class="::iconClass"></i>',scope:{type:"@"},link:function(a){switch(a.iconClass="fa ",a.type){case"pdf":a.iconClass+="fa-file-pdf-o";break;case"docx":case"doc":a.iconClass+="fa-file-word-o";break;default:a.iconClass+="fa-file-o"}}}});

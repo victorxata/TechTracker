@@ -1,0 +1,28 @@
+{
+  "name": "Tx-Web",
+  "version": "1.0.1",
+  "authors": [
+    "Thomas Florin <thoflo002@gmail.com>"
+  ],
+  "description": "All the reusable components and services at Sajan for TX(THIS BOWER CONFIG SHOULD ALWAYS SAY PRIVATE:TRUE)",
+  "main": ["Tx.Doc/dist","Tx.Service/dist"],
+  "keywords": [
+    "Tx.Service", "Tx.Doc"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "dist",
+    "tasks",
+    "gruntfile.js",
+    "config.rb",
+    "package.json",
+    "src",
+    "TX.Service/dist"
+  ]
+}

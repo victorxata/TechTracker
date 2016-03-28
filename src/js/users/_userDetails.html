@@ -1,0 +1,291 @@
+<div class="content">
+
+    <div class="mainbar">
+        <div class="page-head">
+
+
+            <div class="bread-crumb pull-right">
+                <a href="#" ng-click="vm.setToSuper();" ng-show="!vm.isSuperUser();"
+                   tooltip="Set this User as SuperUser"
+                   tooltip-placement="left"
+                   tooltip-trigger="mouseenter">
+                    <img src="img/Superhero48-grey.png" alt="Set to Super User"/>
+                </a>
+                <a href="#" ng-click="vm.setToNormal();" ng-show="vm.isSuperUser();"
+                   tooltip="Set this User as Normal User"
+                   tooltip-placement="left"
+                   tooltip-trigger="mouseenter">
+                    <img src="img/Superhero48.png" alt="Set to Normal User"/>
+                </a>
+            </div>
+            <h2 class="pull-left">{{vm.user.userName}}</h2>
+
+            <div class="clearfix"></div>
+
+            <strong ng-show="!vm.user">Loading...</strong>
+        </div>
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="widget wlightblue">
+
+                            <div class="widget-content">
+                                <!-- Widget content -->
+
+                                <table class="table  table-bordered ">
+                                    <tbody><tr>
+                                        <td>Name</td>
+                                        <td>
+                                            <span id="editNameSpan" ng-show="!vm.editName" ng-click="vm.editNameFunc();" class="underline-me">{{vm.user.realName}}</span>
+                                            <input ng-model="vm.user.realName" type="text" ng-show="vm.editName" id="editNameInput"
+                                                   ng-keydown="vm.checkKey($event, 'name');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editNameButtonDiv" >
+                                                <a id="editNameButton" class="fa fa-edit" ng-show="!vm.editName" ng-click="vm.editNameFunc();"></a>
+                                            </div>
+                                            <div  ng-show="vm.editName">
+                                                <a class="fa fa-save" ng-click="vm.saveName();"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editName=false;"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>
+                                            <span ng-show="!vm.editEmail" ng-click="vm.editEmailFunc();" class="underline-me">{{vm.user.email}}</span>
+                                            <input ng-model="vm.user.email" type="email"  ng-show="vm.editEmail" id="editEmailInput"
+                                                   ng-keydown="vm.checkKey($event, 'email');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editEmailButtonDiv" class="pull-left">
+                                                <a class="fa fa-edit" ng-show="!vm.editEmail" ng-click="vm.editEmailFunc();"></a>
+                                            </div>
+                                            <div ng-show="vm.editEmail">
+                                                <a class="fa fa-save" ng-click="vm.saveEmail();"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editEmail=false;"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Password</td>
+                                        <td>
+                                            <div class="clickable" ng-show="!vm.editPassword" ng-click="vm.editPasswordFunc();">
+                                                <span class="page-subtitle subtitle underline-me"
+                                                      tooltip="Click to change this user's password"
+                                                      tooltip-placement="bottom"
+                                                      tooltip-trigger="mouseenter">Change...</span>
+                                            </div>
+                                            <input ng-model="vm.password" type="password" ng-show="vm.editPassword" id="editPasswordInput"
+                                                   ng-keydown="vm.checkKey($event, 'password');"/>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr ng-show="vm.editPassword">
+                                        <td>Confirm Password</td>
+                                        <td>
+                                            <input ng-model="vm.confirmPassword" type="password"  ng-show="vm.editPassword" id="editConfirmPasswordInput"
+                                                       ng-keydown="vm.checkKey($event, 'confirmPassword');"/>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <a id="savePasswordButton" class="fa fa-save" ng-click="vm.savePassword();"
+                                                   class="underline-me"tooltip="Save Password"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editPassword=false;"
+                                                   class="underline-me"tooltip="Cancel Password edition"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="widget wlightblue">
+                                <!-- Widget title -->
+                                <div class="widget-head">
+                                    <div class="pull-left">Roles</div>
+                                    <div class="widget-icons pull-right">
+                                        <a class="fa fa-plus" ng-click="vm.addRole();"
+                                           tooltip="Select a new Role for the User"
+                                           tooltip-placement="bottom"
+                                           tooltip-trigger="mouseenter"></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="widget-content">
+                                    <strong ng-show="!vm.roles">Loading...</strong>
+                                    <!-- Widget content -->
+                                    <table class="table table-bordered table-responsive">
+
+                                        <tbody>
+                                        <tr ng-repeat="role in vm.roles">
+                                            <td class="roleNameColumn">
+                                                <a ui-sref="roleDetails( {id: role.id} )" class="underline-me"> <span ng-bind="role.name"></span></a>
+                                            </td>
+                                            <td>
+                                                <div id="fdib" class="fdib">
+                                                    <a id="delete-input-btn" class="fa fa-remove" ng-click="vm.deleteRole(role.id);"
+                                                       tooltip="Click to remove this role from the User"
+                                                       tooltip-placement="bottom"
+                                                       tooltip-trigger="mouseenter"></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="widget wlightblue">
+                                <!-- Widget title -->
+                                <div class="widget-head">
+                                    <div class="pull-left">Field Permissions</div>
+                                    <div class="widget-icons pull-right">
+                                        <a class="fa fa-plus" ng-click="vm.addFieldsFilter();"
+                                           tooltip="Create a new field restriction for the User"
+                                           tooltip-placement="bottom"
+                                           tooltip-trigger="mouseenter"></a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="widget-content">
+                                    <strong ng-show="!vm.permissions">Loading...</strong>
+                                    <!-- Widget content -->
+                                    <table class="table table-bordered table-responsive">
+
+                                        <tbody>
+                                        <tr ng-repeat="permission in vm.permissions">
+                                            <td class="roleNameColumn">
+                                                <a ui-sref="fieldsFilterDetails( {id: permission.id} )" class="underline-me"> <span ng-bind="permission.className"></span></a>
+                                            </td>
+                                            <td class="roleNameColumn">
+                                                <span ng-bind="permission.propertyName"></span>
+                                            </td>
+                                            <td class="roleNameColumn">
+                                                <span ng-bind="permission.action"></span>
+                                            </td>
+                                            <td>
+                                                <a class="fa fa-edit" ng-click="vm.editFieldsFilter(permission);"
+                                                   tooltip="Click to edit this field permission"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.deleteFieldsFilter(permission.id);"
+                                                   tooltip="Click to remove this field permission from the User"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/ng-template" id="item.html">
+    <div class="widget wgreen">
+        <!-- Widget title -->
+        <div class="widget-head">
+            <div class="pull-left">Select Roles</div>
+            <div class="widget-icons pull-right">
+                <a class="fa fa-close" ng-click="closeThisDialog()"></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="widget-content">
+            <!-- Widget content -->
+            <ul class="activity">
+                <li ng-repeat="role in vm.allRoles">
+                    <input type="checkbox" ng-click="vm.toggleOption(role.id)"/>
+                    <strong ng-bind="role.name"></strong>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="itemFieldsFilter.html">
+    <div class="widget wgreen">
+        <!-- Widget title -->
+        <div class="widget-head">
+            <div class="pull-left">Assign Field Filter</div>
+            <div class="widget-icons pull-right">
+                <a class="fa fa-close" ng-click="closeThisDialog()"></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="widget-content">
+            <!-- Widget content -->
+            <div class="padd">
+                <h6>Property constraint</h6>
+                <hr>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Class</label>
+                        <div class="col-md-8">
+                            <select class="form-control"
+                                    ng-model="vm.sp"
+                                    ng-options="sp.typeName for sp in vm.allSecurableProperties track by sp.typeName" ng-change="vm.setProperties()">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Property</label>
+                        <div class="col-md-8">
+                            <select class="form-control"
+                                    ng-model="vm.selectedProperty.property"
+                                    ng-options="property for property in vm.allProperties track by property">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Action</label>
+                        <div class="col-md-8">
+                            <select class="form-control"
+                                    ng-model="vm.selectedProperty.action" ng-change="vm.save()">
+                                <option value="setToNull">Set to Null</option>
+                                <option value="setToString">Set to String</option>
+                                <option value="remove">Remove</option>
+                            </select>
+                            <input type="text" ng-show="vm.selectedProperty.action==='setToString'" ng-model="vm.selectedProperty.substitutionText"/>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="form-group">
+                        <!-- Buttons -->
+                        <div class="col-md-push-5 col-md-7">
+                            <button type="submit" class="btn btn-info" ng-click="vm.addFieldFilterItem();closeThisDialog();" ng-show="vm.ffMode==='Add'">{{vm.ffMode}}</button>
+                            <button type="submit" class="btn btn-info" ng-click="vm.updateFieldFilterItem();closeThisDialog();" ng-show="vm.ffMode==='Update'">{{vm.ffMode}}</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</script>

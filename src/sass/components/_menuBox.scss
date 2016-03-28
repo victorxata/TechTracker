@@ -1,0 +1,19 @@
+.menuBox{
+  width: 225px;
+  height: 225px;
+  background-color:#0096d0;
+  margin: 30px;
+  display: inline-block;
+}
+
+.disabled{
+  background-color: lightgrey;
+ }
+
+.menuBox .mbTitle{
+  top: -39px;
+  position: relative;
+  float: right;
+  padding-right: 16px;
+  color:white;
+}

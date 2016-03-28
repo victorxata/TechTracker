@@ -1,0 +1,52 @@
+/*input{
+  font-size: 1em;
+  font-weight: lighter;
+
+}
+
+.editGroup{
+
+  padding-top: 10px;
+}*/
+
+.editGroup span{
+  cursor:pointer;
+}
+
+a{
+  text-decoration: none;
+}
+
+.underline-me:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
+#delete-input-btn {
+  visibility: hidden;
+}
+td:hover + td div#fdib #delete-input-btn {
+  visibility: visible;
+}
+
+#delete-input-btn:hover{
+  visibility:visible;
+}
+
+#editNameButtonDiv{
+  visibility: hidden;
+}
+
+#editNameDiv:hover + #editNameButtonDiv{
+  visibility: visible;
+}
+
+#editEmailButtonDiv{
+  visibility: hidden;
+}
+
+#editEmailDiv:hover + #editEmailButtonDiv{
+  visibility: visible;
+}
+

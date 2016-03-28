@@ -1,0 +1,57 @@
+.comment-item .comment-header {
+  justify-content: flex-start;
+}
+.comment-item .comment-header span {
+  align-self: center;
+}
+.comment-item .comment-header .name {
+  font-size: 1.5em;
+}
+.comment-item .comment-header span:not(.name) {
+  color: #A8A8A8;
+}
+.comment-item .row {
+  display: flex;
+  flex-direction: row;
+}
+.comment-item img {
+  max-width: 100%;
+  margin-right: 5px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.comment-item .text {
+  max-width: 90%;
+}
+.comment-item .comment-reply {
+  width: 100%;
+}
+.comment-item .comment-reply a {
+  color: blue;
+}
+.comment-item .comment-reply a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.comment-item .comment-reply > div {
+  margin-top: 30px;
+}
+.comment-item .comment-reply .row {
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-end;
+}
+.comment-item .comment-reply textarea {
+  flex-basis: 90%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.comment-item .comment-reply button {
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 10px 0px;
+}

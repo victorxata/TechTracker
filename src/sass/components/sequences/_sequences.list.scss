@@ -1,0 +1,22 @@
+.content-processor-sequences{
+  .bladeHeader{
+    position: relative;
+    height: 50px;
+
+    .add-sequence{
+      position: absolute;
+      left: auto;
+    }
+
+    .globalsequence{
+      position: absolute;
+      right: 0;
+      padding: 10px 0;
+
+      .tx-input{
+        display: inline;
+      }
+
+    }
+  }
+}

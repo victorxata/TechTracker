@@ -1,0 +1,114 @@
+<div class="content">
+
+
+    <div class="mainbar">
+        <div class="page-head">
+
+
+            <h2 id="editNameDiv" class="underline-me pull-left">{{vm.endpoint.description}}</h2>
+            <div class="bread-crumb pull-right">
+                <a ng-click="vm.deleteEndpoint(vm.endpoint.id);"
+                   tooltip="Click to remove the Current Endpoint"
+                   tooltip-placement="left"
+                   tooltip-trigger="mouseenter"><h1 class="fa fa-remove delete"></h1></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <strong ng-show="!vm.endpoint">Loading...</strong>
+        </div>
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="widget wlightblue">
+                            <!-- Widget title -->
+
+                            <div class="widget-content">
+                                <!-- Widget content -->
+
+                                <table class="table  table-bordered ">
+                                    <tbody><tr>
+                                        <td>Method</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button class="btn" ng-class="{'btn-success':vm.endpoint.method==='GET'}" ng-click="vm.setMethod('GET');">GET</button>
+                                                <button class="btn" ng-class="{'btn-warning':vm.endpoint.method==='PUT'}" ng-click="vm.setMethod('PUT');">PUT</button>
+                                                <button class="btn" ng-class="{'btn-primary':vm.endpoint.method==='POST'}" ng-click="vm.setMethod('POST');">POST</button>
+                                                <button class="btn" ng-class="{'btn-danger':vm.endpoint.method==='DELETE'}" ng-click="vm.setMethod('DELETE');">DELETE</button>
+
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description</td>
+                                        <td>
+                                            <span ng-show="!vm.editDescription" ng-click="vm.editDescriptionFunc();" class="underline-me">{{vm.endpoint.description}}</span>
+                                            <input ng-model="vm.endpoint.description" type="text"  ng-show="vm.editDescription" id="editDescriptionInput"
+                                                   ng-keydown="vm.checkKey($event, 'description');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editDescriptionButtonDiv" class="pull-left">
+                                                <a class="fa fa-edit" ng-show="!vm.editDescription" ng-click="vm.editDescriptionFunc();"
+                                                   tooltip="Edit the description of the Endpoint"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                            <div ng-show="vm.editDescription">
+                                                <a class="fa fa-save" ng-click="vm.saveDescription();"
+                                                   tooltip="Save the description of the Endpoint"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editDescription=false;"
+                                                   tooltip="Cancel the description of the Endpoint"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Endpoint</td>
+                                        <td>
+                                            <span ng-show="!vm.editEndpoint" ng-click="vm.editEndpointFunc();" class="underline-me">{{vm.endpoint.endpoint}}</span>
+                                            <input ng-model="vm.endpoint.endpoint" type="text"  ng-show="vm.editEndpoint" id="editEndpointInput"
+                                                   ng-keydown="vm.checkKey($event, 'endpoint');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editEndpointButtonDiv" class="pull-left">
+                                                <a class="fa fa-edit" ng-show="!vm.editEndpoint" ng-click="vm.editEndpointFunc();"
+                                                   tooltip="Edit the endpoint of the Endpoint"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                            <div ng-show="vm.editEndpoint">
+                                                <a class="fa fa-save" ng-click="vm.saveEndpoint();"
+                                                   tooltip="Save the endpoint of the Endpoint"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editEndpoint=false;"
+                                                   tooltip="Cancel the endpoint of the Endpoint"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

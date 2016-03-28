@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>tx.Admin</title>
+    <link rel="stylesheet" href="css/angular-toastr.min.css">
+    <link rel="stylesheet" href="css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="css/ngDialog.min.css">
+    <link rel="stylesheet" href="./css/app.css"/>
+</head>
+<body ng-app="txAdmin">
+    <ui-view name="header"></ui-view>
+    <ui-view></ui-view>
+
+
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angular-gettext.min.js"></script>
+    <script src="js/vendor/angular-ui-router.min.js"></script>
+    <script src="js/vendor/underscore-min.js"></script>
+    <script src="js/vendor/js-data.min.js"></script>
+    <script src="js/vendor/js-data-angular.min.js"></script>
+    <script src="js/vendor/angular-mocks.js"></script>
+    <script src="js/vendor/_shared.module.js"></script>
+    <script src="js/vendor/blade.service.js"></script>
+    <script src="js/vendor/blades.js"></script>
+    <script src="js/vendor/ngDialog.min.js"></script>
+    <script src="js/vendor/angular-animate.min.js"></script>
+    <script src="js/vendor/angular-toastr.tpls.min.js"></script>
+
+
+    <script src="js/vendor/tx/TX.Service/deploy/txservices.js"></script>
+    <script src="js/vendor/tx/Tx.Doc/deploy/txButton/txButton.js"></script>
+    <script src="js/vendor/tx/Tx.Doc/deploy/txInput/txInput.js"></script>
+    <script src="js/vendor/tx/Tx.Doc/deploy/txtable/txTable.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/authenticated/authenticated.module.js"></script>
+    <script src="js/authenticated/header.ctrl.js"></script>
+    <script src="js/endpoints/_endpoints.module.js"></script>
+    <script src="js/endpoints/endpoints.ctrl.js"></script>
+    <script src="js/home/_home.module.js"></script>
+    <script src="js/home/home.ctrl.js"></script>
+    <script src="js/login/_login.module.js"></script>
+    <script src="js/login/login.ctrl.js"></script>
+    <script src="js/roles/_roleDetailsCtrl.js"></script>
+    <script src="js/roles/_roles.module.js"></script>
+    <script src="js/roles/roles.ctrl.js"></script>
+    <script src="js/shared/fakeServer.js"></script>
+    <script src="js/shared/models/User.model.js"></script>
+    <script src="js/shared/services/authentication.service.js"></script>
+    <script src="js/shared/services/endpoints.service.js"></script>
+    <script src="js/shared/services/roles.service.js"></script>
+    <script src="js/shared/services/tenants.service.js"></script>
+    <script src="js/shared/services/token.interceptor.js"></script>
+    <script src="js/shared/services/unauthorized.interceptor.js"></script>
+    <script src="js/shared/services/users.service.js"></script>
+    <script src="js/tenantsBar/_tenantsBar.ctrl.js"></script>
+    <script src="js/users/_userDetailsCtrl.js"></script>
+    <script src="js/users/_users.module.js"></script>
+    <script src="js/users/users.ctrl.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+.tx-input {
+  position: relative;
+  padding-bottom: 10px;
+}
+.tx-input input[type='text']:not(.ui-select-search), .tx-input input[type='email'], .tx-input input[type='password'], .tx-input input[type='url'], .tx-input input[type='number'], .tx-input input[type='tel'], .tx-input input[type='date'] {
+  min-width: 200px;
+  height: 36px;
+  vertical-align: middle;
+}
+.tx-input input[type='text']:not(.ui-select-search):-webkit-autofill, .tx-input input[type='text']:not(.ui-select-search):-webkit-autofill:focus, .tx-input input[type='text']:not(.ui-select-search):-webkit-autofill:hover, .tx-input input[type='email']:-webkit-autofill, .tx-input input[type='email']:-webkit-autofill:focus, .tx-input input[type='email']:-webkit-autofill:hover, .tx-input input[type='password']:-webkit-autofill, .tx-input input[type='password']:-webkit-autofill:focus, .tx-input input[type='password']:-webkit-autofill:hover, .tx-input input[type='url']:-webkit-autofill, .tx-input input[type='url']:-webkit-autofill:focus, .tx-input input[type='url']:-webkit-autofill:hover, .tx-input input[type='number']:-webkit-autofill, .tx-input input[type='number']:-webkit-autofill:focus, .tx-input input[type='number']:-webkit-autofill:hover, .tx-input input[type='tel']:-webkit-autofill, .tx-input input[type='tel']:-webkit-autofill:focus, .tx-input input[type='tel']:-webkit-autofill:hover, .tx-input input[type='date']:-webkit-autofill, .tx-input input[type='date']:-webkit-autofill:focus, .tx-input input[type='date']:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0px 1000px #efefef inset !important;
+}
+.tx-input input[type='text']:not(.ui-select-search), .tx-input input[type='email'], .tx-input input[type='password'], .tx-input input[type='url'], .tx-input input[type='number'], .tx-input input[type='tel'], .tx-input input[type='date'], .tx-input textarea {
+  display: block;
+  width: 100%;
+  padding: 0 1rem;
+  background-color: #efefef;
+  border: 1px solid #D2D2D2;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  outline: none;
+  font-family: Arial;
+  font-size: 13px;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.tx-input input[type='text']:not(.ui-select-search):focus, .tx-input input[type='email']:focus, .tx-input input[type='password']:focus, .tx-input input[type='url']:focus, .tx-input input[type='number']:focus, .tx-input input[type='tel']:focus, .tx-input input[type='date']:focus, .tx-input textarea:focus {
+  box-shadow: 0 0 5px #34C9DF;
+  border: 1px solid #34C9DF;
+}
+.tx-input input[type='text']:not(.ui-select-search)[disabled], .tx-input input[type='text']:not(.ui-select-search)[readonly], .tx-input input[type='email'][disabled], .tx-input input[type='email'][readonly], .tx-input input[type='password'][disabled], .tx-input input[type='password'][readonly], .tx-input input[type='url'][disabled], .tx-input input[type='url'][readonly], .tx-input input[type='number'][disabled], .tx-input input[type='number'][readonly], .tx-input input[type='tel'][disabled], .tx-input input[type='tel'][readonly], .tx-input input[type='date'][disabled], .tx-input input[type='date'][readonly], .tx-input textarea[disabled], .tx-input textarea[readonly] {
+  cursor: not-allowed !important;
+  background-color: #e7e7e7 !important;
+  border: 1px solid #dfdfdf !important;
+  box-shadow: none;
+}
+.tx-input textarea {
+  resize: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.tx-input label {
+  display: inline-block;
+  margin-bottom: 0.2rem;
+  font-weight: 300;
+}
+.tx-input .help-block {
+  display: none;
+  margin-top: 0.2rem;
+  font-size: .8rem;
+  font-style: italic;
+}
+.tx-input.ng-dirty.ng-invalid.no-label::after {
+  top: 0px;
+}
+.tx-input.ng-dirty.ng-invalid::after {
+  position: absolute;
+  right: 0.5rem;
+  top: 23px;
+  font-family: 'FontAwesome';
+  font-size: 1.6rem;
+  color: #f1485a;
+  content: '\f00d';
+}
+.tx-input.ng-dirty.ng-invalid input[type='text']:not(.ui-select-search), .tx-input.ng-dirty.ng-invalid input[type='email'], .tx-input.ng-dirty.ng-invalid input[type='password'], .tx-input.ng-dirty.ng-invalid input[type='url'], .tx-input.ng-dirty.ng-invalid input[type='number'], .tx-input.ng-dirty.ng-invalid input[type='tel'], .tx-input.ng-dirty.ng-invalid input[type='date'], .tx-input.ng-dirty.ng-invalid textarea {
+  border-color: #f1485a;
+}
+.tx-input.ng-dirty.ng-invalid input[type='text']:not(.ui-select-search):focus, .tx-input.ng-dirty.ng-invalid input[type='email']:focus, .tx-input.ng-dirty.ng-invalid input[type='password']:focus, .tx-input.ng-dirty.ng-invalid input[type='url']:focus, .tx-input.ng-dirty.ng-invalid input[type='number']:focus, .tx-input.ng-dirty.ng-invalid input[type='tel']:focus, .tx-input.ng-dirty.ng-invalid input[type='date']:focus, .tx-input.ng-dirty.ng-invalid textarea:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tx-input.ng-dirty.ng-invalid .help-block.invalid {
+  display: block;
+  color: #f1485a;
+}
+.tx-input.no-icons::after, .tx-input.textarea::after, .tx-input.div::after {
+  content: '' !important;
+}
+.tx-input.ng-dirty.ng-valid.no-label::after {
+  top: 0px;
+}
+.tx-input.ng-dirty.ng-valid::after {
+  position: absolute;
+  right: 0.5rem;
+  top: 23px;
+  font-family: 'FontAwesome';
+  font-size: 1.6rem;
+  color: #63C265;
+  content: '\f00c';
+}
+.tx-input.ng-dirty.ng-valid input[type='text']:not(.ui-select-search), .tx-input.ng-dirty.ng-valid input[type='email'], .tx-input.ng-dirty.ng-valid input[type='password'], .tx-input.ng-dirty.ng-valid input[type='url'], .tx-input.ng-dirty.ng-valid input[type='number'], .tx-input.ng-dirty.ng-valid input[type='tel'], .tx-input.ng-dirty.ng-valid input[type='date'], .tx-input.ng-dirty.ng-valid textarea {
+  border-color: #63C265;
+}
+.tx-input.ng-dirty.ng-valid input[type='text']:not(.ui-select-search):focus, .tx-input.ng-dirty.ng-valid input[type='email']:focus, .tx-input.ng-dirty.ng-valid input[type='password']:focus, .tx-input.ng-dirty.ng-valid input[type='url']:focus, .tx-input.ng-dirty.ng-valid input[type='number']:focus, .tx-input.ng-dirty.ng-valid input[type='tel']:focus, .tx-input.ng-dirty.ng-valid input[type='date']:focus, .tx-input.ng-dirty.ng-valid textarea:focus {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.tx-input.ng-dirty.ng-valid .help-block.valid {
+  display: block;
+  color: #63C265;
+}
+.tx-input.horizontal.textarea label {
+  vertical-align: top;
+  padding-top: 5px;
+}
+.tx-input.horizontal label {
+  width: 25%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.tx-input.horizontal input[type='text']:not(.ui-select-search), .tx-input.horizontal input[type='email'], .tx-input.horizontal input[type='password'], .tx-input.horizontal input[type='url'], .tx-input.horizontal input[type='number'], .tx-input.horizontal input[type='tel'], .tx-input.horizontal input[type='date'], .tx-input.horizontal textarea, .tx-input.horizontal .ui-select-container {
+  width: 75%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.tx-input.horizontal.no-label input[type='text']:not(.ui-select-search), .tx-input.horizontal.no-label input[type='email'], .tx-input.horizontal.no-label input[type='password'], .tx-input.horizontal.no-label input[type='url'], .tx-input.horizontal.no-label input[type='number'], .tx-input.horizontal.no-label input[type='tel'], .tx-input.horizontal.no-label input[type='date'], .tx-input.horizontal.no-label textarea {
+  width: 100%;
+  display: inline-block;
+}

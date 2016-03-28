@@ -1,0 +1,68 @@
+<div class="content">
+    <div class="mainbar">
+        <div class="page-head">
+
+
+            <!-- Page heading -->
+            <h2 class="pull-left">Users
+            </h2>
+
+            <div class="bread-crumb pull-right">
+                <div class="addButton">
+                    <a class="fa fa-plus" ng-click="vm.addUser();"
+                       tooltip="Add new User"
+                       tooltip-placement="left"
+                       tooltip-trigger="mouseenter"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong ng-show="!vm.users">Loading...</strong>
+                        <div class="widget widget wlightblue">
+                            <!--<div class="widget-head">
+                                <div class="pull-left">Users</div>
+
+                                <div class="clearfix"></div>
+                            </div>-->
+                            <div class="widget-content">
+                                <!-- Search form -->
+                                <div class="sidebar-widget">
+                                    <form>
+                                        <input type="text" class="form-control" placeholder="Search" ng-model="vm.search">
+                                    </form>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>SuperAdmin</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="user in vm.users | filter:vm.search">
+                                            <td>
+                                                <img src="img/Super hero-32.png" alt="Super User" ng-show="vm.isSuperUser(user.roles);"/>
+                                            </td>
+                                            <td><a ui-sref="userDetails( {id: user.id} )"> <span ng-bind="user.userName" class="underline-me"></span></a></td>
+                                            <td><a ng-href="mailto:{{user.email}}"><span ng-bind="user.email" class="underline-me"></span></a> </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

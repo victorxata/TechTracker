@@ -1,0 +1,76 @@
+<div class="content">
+
+
+    <div class="mainbar">
+        <div class="page-head">
+
+
+            <h2 id="editNameDiv" class="underline-me pull-left">{{vm.candidate.name}}</h2>
+            <div class="bread-crumb pull-right">
+                <a ng-click="vm.deleteCandidate(vm.candidate.id);"
+                   tooltip="Click to remove the Current Candidate"
+                   tooltip-placement="left"
+                   tooltip-trigger="mouseenter"><h1 class="fa fa-remove delete"></h1></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <strong ng-show="!vm.candidate">Loading...</strong>
+        </div>
+
+        <div class="matter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="widget wlightblue">
+                            <!-- Widget title -->
+
+                            <div class="widget-content">
+                                <!-- Widget content -->
+
+                                <table class="table  table-bordered ">
+                                    <tbody>
+
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>
+                                            <span ng-show="!vm.editName" ng-click="vm.editNameFunc();" class="underline-me">{{vm.candidate.name}}</span>
+                                            <input ng-model="vm.candidate.name" type="text"  ng-show="vm.editName" id="editNameInput"
+                                                   ng-keydown="vm.checkKey($event, 'name');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editNameButtonDiv" class="pull-left">
+                                                <a class="fa fa-edit" ng-show="!vm.editName" ng-click="vm.editNameFunc();"
+                                                   tooltip="Edit the name of the Candidate"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                            <div ng-show="vm.editName">
+                                                <a class="fa fa-save" ng-click="vm.editNameSave();"
+                                                   tooltip="Save the name of the Candidate"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editName=false;"
+                                                   tooltip="Cancel the name of the Candidate"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

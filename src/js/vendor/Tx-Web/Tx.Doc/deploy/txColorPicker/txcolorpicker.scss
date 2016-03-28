@@ -1,0 +1,63 @@
+.tx-color-picker .txColor {
+  display: inline-block;
+}
+.tx-color-picker .txColorItem {
+  border: 1px solid gray;
+  height: 24px;
+  width: 24px;
+}
+.tx-color-picker .txColorLabel {
+  margin-left: 15px;
+  vertical-align: super;
+}
+.tx-color-picker .txColorContainer {
+  display: inline-block;
+  float: right !important;
+  min-height: 51px;
+  width: 150px;
+}
+.tx-color-picker label {
+  margin-top: 12px !important;
+  font-weight: 400 !important;
+  color: #404040 !important;
+}
+.tx-color-picker .selectedColor {
+  display: inline-block !important;
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 11px;
+  border: 1px solid gray;
+  height: 24px;
+  width: 24px;
+}
+.tx-color-picker .txColorInput {
+  width: 100px !important;
+  float: right;
+  margin-right: -1px;
+  margin-top: 0px;
+  height: 46px !important;
+  background-color: white !important;
+  min-width: 85px !important;
+  border-radius: 0;
+}
+.tx-color-picker .selectize-control.single .selectize-input, .tx-color-picker .selectize-dropdown.single {
+  border-radius: 0;
+}
+.tx-color-picker .selectize-dropdown-content {
+  max-height: 300px;
+}
+.tx-color-picker .selectize-input {
+  width: 225px;
+}
+.tx-color-picker .ui-select-choices.selectize-dropdown.single.ng-scope {
+  width: 225px;
+}
+.tx-color-picker .selectize-control.single .selectize-input {
+  background-image: none !important;
+}
+.tx-color-picker .tx-color-pickerCheckbox {
+  float: left;
+  margin-top: 17px;
+  margin-right: 10px;
+}

@@ -1,0 +1,125 @@
+.tx-button {
+  background-color: #573d7d;
+  color: #f5f3f9;
+  border: none;
+  display: inline-block;
+  padding: 0.35rem 1.8rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+  text-shadow: 1px 1px 2px #271c38;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.tx-button:hover {
+  background-color: #6f4e9f;
+  text-decoration: none;
+}
+.tx-button:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.tx-button[disabled] {
+  background-color: #CDCDCD !important;
+  color: #757575 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  text-shadow: none !important;
+}
+.tx-button[disabled] .badge {
+  color: #757575 !important;
+}
+.tx-button .badge {
+  background-color: #f5f3f9;
+  text-shadow: none;
+  color: #573d7d;
+  padding: 0rem 0.6rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-left: 5px;
+  position: relative;
+  top: 1px;
+}
+.tx-button.primary {
+  background-color: #34C9DF;
+  color: white;
+  text-shadow: 1px 1px 2px #188595;
+}
+.tx-button.primary:hover {
+  background-color: #60d5e6;
+}
+.tx-button.primary .badge {
+  color: #34C9DF;
+}
+.tx-button.info {
+  background-color: #23c49a;
+  color: white;
+  text-shadow: 1px 1px 2px #146d56;
+}
+.tx-button.info:hover {
+  background-color: #3edcb3;
+}
+.tx-button.info .badge {
+  color: #23c49a;
+}
+.tx-button.success {
+  background-color: #a1d042;
+  color: white;
+  text-shadow: 1px 1px 2px #678a22;
+}
+.tx-button.success:hover {
+  background-color: #b5da6b;
+}
+.tx-button.success .badge {
+  color: #a1d042;
+}
+.tx-button.warning {
+  background-color: #ffca34;
+  color: white;
+  text-shadow: 1px 1px 2px #cd9700;
+}
+.tx-button.warning:hover {
+  background-color: #ffd767;
+}
+.tx-button.warning .badge {
+  color: #ffca34;
+}
+.tx-button.danger {
+  background-color: #f1485a;
+  color: white;
+  text-shadow: 1px 1px 2px #c40f22;
+}
+.tx-button.danger:hover {
+  background-color: #f57785;
+}
+.tx-button.danger .badge {
+  color: #f1485a;
+}
+.tx-button.loading {
+  background-color: #CDCDCD !important;
+  color: #757575 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  text-shadow: none !important;
+}
+.tx-button.loading .badge {
+  color: #757575 !important;
+}
+.tx-button.loading::before {
+  display: inline-block;
+  margin-right: 0.2rem;
+  height: 100%;
+  font-family: 'Ionicons';
+  content: '\f21c';
+  -webkit-animation: spin 0.7s infinite linear;
+  -moz-animation: spin 0.7s infinite linear;
+  -o-animation: spin 0.7s infinite linear;
+  animation: spin 0.7s infinite linear;
+}

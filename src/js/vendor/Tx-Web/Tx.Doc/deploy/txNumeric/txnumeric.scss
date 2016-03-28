@@ -1,0 +1,42 @@
+.tx-numeric .txNumericContainer {
+  float: right !important;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.tx-numeric .txNumeric {
+  display: inline-block !important;
+  font-size: 14px !important;
+  font-weight: bold;
+  width: 70px !important;
+}
+.tx-numeric .txNumericText {
+  font-size: 12px !important;
+  text-align: center;
+  width: 70px !important;
+  height: 26px !important;
+  min-width: 70px !important;
+  background-color: white !important;
+  box-shadow: none;
+}
+.tx-numeric .tx-NumericCheckbox {
+  float: left;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+.tx-numeric label {
+  margin-top: 25px;
+  font-weight: 400;
+  color: #404040;
+}
+.tx-numeric .txNumericBtn {
+  font-family: Arial, serif;
+  color: black;
+  background: #efefef;
+  padding: 3px 20px 3px 20px;
+  border: solid #d2d2d2 1px;
+  text-decoration: none;
+}
+.tx-numeric .txNumericBtn:hover {
+  background: #e0e0e0;
+  text-decoration: none;
+}

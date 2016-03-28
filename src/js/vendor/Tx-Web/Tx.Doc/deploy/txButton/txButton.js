@@ -1,0 +1,1 @@
+"use strict";angular.module("baseApp.shared").directive("txMainButton",function(){return{restrict:"E",replace:!0,template:'<button class="tx-button primary" ng-transclude></button>',transclude:!0}}).directive("txWarningButton",function(){return{restrict:"E",replace:!0,template:'<button class="tx-button warning" ng-transclude></button>',transclude:!0}});
