@@ -1,9 +1,28 @@
-'use strict';
-angular.module('txAdmin.Home')
-    .controller('homeCtrl', function($scope, $http, user, endpointsService, usersService, rolesService, securablePropertiesService, fieldsFilterService, alertService, $state){
 
+(function(){
+    'use strict';
+
+    angular.module('txAdmin.Home')
+        .controller('homeCtrl', HomeController);
+
+    HomeController.$inject = ['$scope', '$http', 'user', 'endpointsService', 'usersService', 'rolesService', 
+        'securablePropertiesService', 'fieldsFilterService', 'alertService', '$state'];
+
+    function HomeController($scope, $http, user, endpointsService, usersService, rolesService, 
+                            securablePropertiesService, fieldsFilterService, alertService, $state) {
+        
         var vm = this;
 
+        vm.labels = ["Year Target", "Target to date"];
+        vm.data = [300, 100];
+
+        vm.seriesbar1 = ['Target', 'Current']
+        vm.labelsbar1 = ['Garda', 'VHI', 'CoI', 'BoI', 'BNM', 'DSP', 'Revenue', 'Axis', 'Products', 'Pool'];
+        vm.databar1 = [
+            [25, 65, 11, 86, 43, 77, 44, 12, 87, 21],
+            [10, 50, 5, 44, 21, 21, 15, 3, 32, 2]
+        ];
+        
         vm.user = user;
 
         vm.users = 0;
@@ -106,4 +125,5 @@ angular.module('txAdmin.Home')
         };
 
 
-    });
+    }
+}());

@@ -5,7 +5,7 @@
         <div class="page-head">
 
 
-            <h2 id="editNameDiv" class="underline-me pull-left">{{vm.opportunity.name}}</h2>
+            <h2 id="editNameDiv" class="underline-me pull-left">{{vm.opportunity.role}}</h2>
             <div class="bread-crumb pull-right">
                 <a ng-click="vm.deleteOpportunity(vm.opportunity.id);"
                    tooltip="Click to remove the Current Opportunity"
@@ -35,24 +35,76 @@
                                     <tr>
                                         <td>Name</td>
                                         <td>
-                                            <span ng-show="!vm.editName" ng-click="vm.editNameFunc();" class="underline-me">{{vm.opportunity.name}}</span>
-                                            <input ng-model="vm.opportunity.name" type="text"  ng-show="vm.editName" id="editNameInput"
+                                            <span ng-show="!vm.editName" ng-click="vm.editNameFunc();" class="underline-me">{{vm.opportunity.role}}</span>
+                                            <input ng-model="vm.role.role" type="text"  ng-show="vm.editName" id="editNameInput"
                                                    ng-keydown="vm.checkKey($event, 'name');"/>
                                         </td>
                                         <td>
                                             <div id="editNameButtonDiv" class="pull-left">
                                                 <a class="fa fa-edit" ng-show="!vm.editName" ng-click="vm.editNameFunc();"
-                                                   tooltip="Edit the name of the Opportunity"
+                                                   tooltip="Edit the role description of the Opportunity"
                                                    tooltip-placement="bottom"
                                                    tooltip-trigger="mouseenter"></a>
                                             </div>
                                             <div ng-show="vm.editName">
                                                 <a class="fa fa-save" ng-click="vm.editNameSave();"
-                                                   tooltip="Save the name of the Opportunity"
+                                                   tooltip="Save the role description of the Opportunity"
                                                    tooltip-placement="bottom"
                                                    tooltip-trigger="mouseenter"></a>
                                                 <a class="fa fa-remove" ng-click="vm.editName=false;"
-                                                   tooltip="Cancel the name of the Opportunity"
+                                                   tooltip="Cancel the role description of the Opportunity"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Account</td>
+                                        <td>
+                                            <span ng-show="!vm.editAccount" ng-click="vm.editAccountFunc();" class="underline-me">{{vm.opportunity.accountId}}</span>
+                                            <input ng-model="vm.role.accountId" type="text"  ng-show="vm.editAccount" id="editAccountInput"
+                                                   ng-keydown="vm.checkKey($event, 'account');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editAccountButtonDiv" class="pull-left">
+                                                <a class="fa fa-edit" ng-show="!vm.editAccount" ng-click="vm.editAccountFunc();"
+                                                   tooltip="Edit the account of the Opportunity"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                            <div ng-show="vm.editAccount">
+                                                <a class="fa fa-save" ng-click="vm.editAccountSave();"
+                                                   tooltip="Save the account of the Opportunity"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editAccount=false;"
+                                                   tooltip="Cancel the account of the Opportunity"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Target #</td>
+                                        <td>
+                                            <span ng-show="!vm.editTarget" ng-click="vm.editTargetFunc();" class="underline-me">{{vm.opportunity.target}}</span>
+                                            <input ng-model="vm.role.target" type="text"  ng-show="vm.editTarget" id="editTargetInput"
+                                                   ng-keydown="vm.checkKey($event, 'Target');"/>
+                                        </td>
+                                        <td>
+                                            <div id="editTargetButtonDiv" class="pull-left">
+                                                <a class="fa fa-edit" ng-show="!vm.editTarget" ng-click="vm.editTargetFunc();"
+                                                   tooltip="Edit the Target of the Opportunity"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                            </div>
+                                            <div ng-show="vm.editTarget">
+                                                <a class="fa fa-save" ng-click="vm.editTargetSave();"
+                                                   tooltip="Save the Target of the Opportunity"
+                                                   tooltip-placement="bottom"
+                                                   tooltip-trigger="mouseenter"></a>
+                                                <a class="fa fa-remove" ng-click="vm.editTarget=false;"
+                                                   tooltip="Cancel the Target of the Opportunity"
                                                    tooltip-placement="bottom"
                                                    tooltip-trigger="mouseenter"></a>
                                             </div>

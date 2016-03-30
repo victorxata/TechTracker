@@ -47,7 +47,9 @@
       "src/js/vendor/jquery-flot/jquery.flot.js",
       "src/js/vendor/jquery-flot/jquery.flot.pie.js",
       "src/js/vendor/jquery-flot/jquery.flot.resize.js",
-      "src/js/vendor/jquery-flot/jquery.flot.stack.js"
+      "src/js/vendor/jquery-flot/jquery.flot.stack.js",
+      "src/js/vendor/angular-chart.js/Chart.min.js",
+      "src/js/vendor/angular-chart.js/angular-chart.js"
     ],
     "css":[
       "src/js/vendor/ngDialog/css/ngDialog.min.css",
@@ -63,7 +65,8 @@
       "src/css/prettyPhoto.css",
       "src/css/rateit.css",
       "src/css/style.css",
-      "src/css/widgets.css"
+      "src/css/widgets.css",
+      "src/js/vendor/angular-chart.js/angular-chart.min.css"
     ]
   }
 }

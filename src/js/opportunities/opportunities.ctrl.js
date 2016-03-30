@@ -23,18 +23,21 @@
                 vm.opportunities = response;
             });
 
-        vm.addCandidate = function(){
+        vm.addOpportunity = function(){
             var opportunity = {
-                description: 'New Candidate'
+                role: 'New Role',
+                accountId: null,
+                target: 1,
+                sold: false
             };
-            opportunitiesService.addCandidate(opportunity)
+            opportunitiesService.addOpportunity(opportunity)
                 .success(function(response){
-                    alertService.info('Created new Candidate with Id', response.id);
+                    alertService.info('Created new Opportunity with Id', response.id);
 
                     $state.go('opportunityDetails', {id:response.id});
                 })
                 .error(function(response){
-                    alertService.error('Error creating new Candidate', response);
+                    alertService.error('Error creating new Opportunity', response);
                 })
         }
     }

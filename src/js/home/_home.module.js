@@ -1,5 +1,5 @@
 'use strict';
-angular.module('txAdmin.Home', [])
+angular.module('txAdmin.Home', ['chart.js'])
 .config(function($stateProvider){
     $stateProvider
         .state('home', {

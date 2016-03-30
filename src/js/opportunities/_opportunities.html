@@ -9,8 +9,8 @@
 
             <div class="bread-crumb pull-right">
                 <div class="addButton">
-                    <a class="fa fa-plus" ng-click="vm.addCandidate();"
-                       tooltip="Add a new Candidate"
+                    <a class="fa fa-plus" ng-click="vm.addOpportunity();"
+                       tooltip="Add a new Opportunity"
                        tooltip-placement="left"
                        tooltip-trigger="mouseenter"></a>
                 </div>
@@ -37,15 +37,29 @@
                                     <table class="table table-bordered">
                                         <thead>
                                         <tr>
-                                            <th>Description</th>
+                                            <th>Role</th>
+                                            <th>Account</th>
+                                            <th>Target #</th>
+                                            <th>Level</th>
+                                            <th>Sold</th>
+                                            <th>Hired</th>
+                                            <th>Offer made</th>
+                                            <th>In process</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr ng-repeat="opportunity in vm.opportunities | filter:vm.search">
 
                                             <td>
-                                                <a ui-sref="opportunityDetails( {id: opportunity.id} )"> <span ng-bind="opportunity.description"></span></a>
+                                                <a ui-sref="opportunityDetails( {id: opportunity.id} )"> <span ng-bind="opportunity.role"></span></a>
                                             </td>
+                                            <td><span ng-bind="opportunity.accountId"></span></td>
+                                            <td><span ng-bind="opportunity.target"></span></td>
+                                            <td><span ng-bind="opportunity.level"></span></td>
+                                            <td><span ng-bind="opportunity.sold"></span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                         </tbody>
                                     </table>
