@@ -1350,7 +1350,8 @@ header{
 }
 
 .body-login {
-	background: url('../img/login-background2.png') no-repeat center center fixed #3f3f3f;
+	background: url('../img/login-background2.png') no-repeat #3f3f3f;
+	background-size: 100% auto;
 }
 
 .li-mini{
@@ -1501,4 +1502,13 @@ header{
 	width: 120px;
 	position:relative;
 	top:9px;
+}
+
+.sold{
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: palegreen;
+	border-radius: 25px;
+	font-style: italic;
+	font-weight: bold;
 }

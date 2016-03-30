@@ -53,10 +53,10 @@
                                             <td>
                                                 <a ui-sref="opportunityDetails( {id: opportunity.id} )"> <span ng-bind="opportunity.role"></span></a>
                                             </td>
-                                            <td><span ng-bind="opportunity.accountId"></span></td>
+                                            <td><span ng-bind="opportunity.accountName"></span></td>
                                             <td><span ng-bind="opportunity.target"></span></td>
                                             <td><span ng-bind="opportunity.level"></span></td>
-                                            <td><span ng-bind="opportunity.sold"></span></td>
+                                            <td><span ng-hide="opportunity.sold!=true" class="sold">SOLD</span> </td>
                                             <td></td>
                                             <td></td>
                                             <td></td>

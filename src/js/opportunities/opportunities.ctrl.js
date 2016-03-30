@@ -7,9 +7,9 @@
     angular.module('txAdmin.Opportunities')
         .controller('opportunitiesCtrl', OpportunitiesController);
 
-    OpportunitiesController.$inject = ['$scope', 'opportunitiesService', 'alertService', '$state'];
+    OpportunitiesController.$inject = ['$scope', 'opportunitiesService', 'alertService', '$state', 'accountsService'];
 
-    function OpportunitiesController($scope, opportunitiesService, alertService, $state) {
+    function OpportunitiesController($scope, opportunitiesService, alertService, $state, accountsService) {
 
         var vm = this;
 
@@ -17,18 +17,50 @@
 
         vm.opportunities = null;
 
-        opportunitiesService.getOpportunities()
-            .success(function (response) {
-                console.log(response);
-                vm.opportunities = response;
-            });
+        vm.accounts = null;
+
+        refresh();
+
+        function refresh(){
+
+            opportunitiesService.getOpportunities()
+                .success(function (response) {
+                    console.log('opportunities: ', response);
+                    vm.opportunities = response;
+                    accountsService.getAccounts()
+                        .success(function(response){
+                            console.log('Accounts: ', response)
+                            vm.accounts = response;
+                            angular.forEach(vm.opportunities, function(value){
+                                vm.getAccountName(value);
+                            })
+                        })
+                        .error(function(response){
+                            alertService.error('Error retrieving accounts', response);
+                        });
+
+                })
+                .error(function(response){
+                    alertService.error('Error retrieving opportunities', response);
+                });
+
+        }
+
+        vm.getAccountName = function(opportunity){
+          angular.forEach(vm.accounts, function(value){
+              if (value.id === opportunity.accountId){
+                  opportunity.accountName = value.description;
+              }
+          })
+        };
 
         vm.addOpportunity = function(){
             var opportunity = {
                 role: 'New Role',
-                accountId: null,
+                accountId: '-1',
                 target: 1,
-                sold: false
+                sold: false,
+                employeeLevel: 0
             };
             opportunitiesService.addOpportunity(opportunity)
                 .success(function(response){
@@ -40,6 +72,8 @@
                     alertService.error('Error creating new Opportunity', response);
                 })
         }
+
+
     }
 
 }());

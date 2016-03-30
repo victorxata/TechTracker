@@ -2,12 +2,11 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="7ba6e3a2-de3d-4044-bdf7-0676cf1a212d" name="TechTracker" url="http://accenture-techtracker.azurewebsites.net">
+      <webServer id="7ba6e3a2-de3d-4044-bdf7-0676cf1a212d" name="TechTracker (project level)" url="http://accenture-techtracker.azurewebsites.net">
         <fileTransfer host="waws-prod-db3-035.ftp.azurewebsites.windows.net" port="21" password="dfe6dfdadfcfdfc6dfdadfc5df9adff3dfefdfd8dfe7dfd3dfc2df9ddfccdfe0dfe1df9cdf9bdfcddfdddfeedfcedfc0df9fdffbdfe6dfe1dfe1dfcddfe4dff2df9fdfcddffbdff2dfcedfe8dfd9dfdcdfc4dfcfdfc9dfcedf9ddf92df9cdf93dfc7dfeedfefdfeddfe4dfcfdfc8dfc5df93dfeddfdbdfde" username="accenture-techtracker\$accenture-techtracker">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
-          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
     </option>

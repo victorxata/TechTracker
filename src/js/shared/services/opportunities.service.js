@@ -15,7 +15,9 @@
             saveOpportunity: saveOpportunity,
             deleteOpportunity: deleteOpportunity,
             addOpportunity: addOpportunity,
-            countOpportunities: countOpportunities
+            countOpportunities: countOpportunities,
+            addSkillToOpportunity: addSkillToOpportunity,
+            removeSkillToOpportunity: removeSkillToOpportunity
         };
 
         function countOpportunities(){
@@ -25,7 +27,7 @@
                         resolve(response.length);
                     })
                     .error(function(response){
-                        alertService.error('Error retrieving candidates', response);
+                        alertService.error('Error retrieving opportunities', response);
                         resolve(-1);
                     })
             })
@@ -35,14 +37,14 @@
             return $http({method: 'GET', url:rUrl});
         }
 
-        function saveOpportunity(candidate){
-            var rUrl = DS.defaults.basePath + '/Opportunities/' + candidate.id;
-            return $http({method: 'PUT', url:rUrl, data: candidate});
+        function saveOpportunity(opportunity){
+            var rUrl = DS.defaults.basePath + '/Opportunities/' + opportunity.id;
+            return $http({method: 'PUT', url:rUrl, data: opportunity});
         }
 
-        function addOpportunity(candidate){
+        function addOpportunity(opportunity){
             var rUrl = DS.defaults.basePath + '/Opportunities/';
-            return $http({method: 'POST', url:rUrl, data: candidate});
+            return $http({method: 'POST', url:rUrl, data: opportunity});
         }
 
         function getOpportunity(id) {
@@ -52,6 +54,16 @@
 
         function deleteOpportunity(id) {
             var rUrl = DS.defaults.basePath + '/Opportunities/' + id;
+            return $http({method: 'DELETE', url:rUrl});
+        }
+
+        function addSkillToOpportunity(id, skill){
+            var rUrl = DS.defaults.basePath + '/Opportunities/' + id + '/AddSkill';
+            return $http({method: 'POST', url:rUrl, data: skill});
+        }
+
+        function removeSkillToOpportunity(id, skillId){
+            var rUrl = DS.defaults.basePath + '/Opportunities/' + id + '/RemoveSkill/' + skillId;
             return $http({method: 'DELETE', url:rUrl});
         }
     }
