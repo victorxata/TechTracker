@@ -70,7 +70,9 @@
         };
 
         vm.save = function(){
+            vm.editName = false;
             opportunitiesService.saveOpportunity(vm.opportunity);
+            refresh()
         };
 
         vm.editNameCancel = function(){
@@ -84,7 +86,7 @@
             if (event.keyCode === 13){
                 
                 if (editor === 'name'){
-                    vm.editNameSave();
+                    vm.save();
                 }
             }
             if (event.keyCode === 27){

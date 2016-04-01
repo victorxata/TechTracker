@@ -12,41 +12,29 @@
         var vm = this;
 
         vm.labels = ["Year Target", "Hired to date"];
-        vm.data = [100, 0];
+        vm.data = [0, 0];
 
-        vm.seriesbar1 = ['Target', 'Current']
-        vm.labelsbar1 = ['Garda', 'VHI', 'CoI', 'BoI', 'BNM', 'DSP', 'Revenue', 'Axis', 'Products', 'Pool'];
-        vm.databar1 = [
-            [25, 65, 11, 86, 43, 77, 44, 12, 87, 21],
-            [10, 50, 5, 44, 21, 21, 15, 3, 32, 2]
-        ];
+        vm.seriesbar1 = ['Target', 'Hired'];
+
+        vm.labelsbar1 = [];
+        vm.databar1 = [[],[]];
         
         vm.user = user;
-
-
-
         vm.refresh = function(){
             summaryService.getSummary()
                 .success(function(response){
                     vm.data[0] = response.target;
                     vm.data[1] = response.hired;
+                    vm.labelsbar1 = [];
+                    vm.databar1 = [[],[]];
+                    angular.forEach(response.byAccount, function(account){
+                        vm.labelsbar1.push(account.accountName);
+                        vm.databar1[0].push(account.target);
+                        vm.databar1[1].push(account.hired);
+                    })
                 })
 
         };
-
-        vm.getFieldsFilters = function(){
-        };
-
-
-        vm.getRoles = function(){
-
-        };
-
         vm.refresh();
-
-
-
-
-
     }
 }());

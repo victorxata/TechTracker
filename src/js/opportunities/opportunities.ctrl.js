@@ -57,7 +57,6 @@
         vm.addOpportunity = function(){
             var opportunity = {
                 role: 'New Role',
-                accountId: '-1',
                 target: 1,
                 sold: false,
                 employeeLevel: 0

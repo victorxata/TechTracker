@@ -13,12 +13,12 @@
 
         var apis = [
             {
-                //name: 'Azure Websites API',
-                //url:'http://techtrackerapi.azurewebsites.net',
-                //default: true
-                    name: 'Windows (VM inside Mac)',
-                    url:'http://192.168.1.12:8080',
-                    default: true
+                name: 'Azure Websites API',
+                url:'http://techtrackerapi.azurewebsites.net',
+                default: true
+                    // name: 'Windows (VM inside Mac)',
+                    // url:'http://192.168.1.12:8080',
+                    // default: true
             }
             //,{
             //    name: 'Windows (VM inside Mac)',
